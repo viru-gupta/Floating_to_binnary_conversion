@@ -11,15 +11,10 @@ def bin_deci(a):
     return (ans)
 def bin_inti(a):
     ans=''
-    if a<=63:
-        i=6
-    elif a<=1023:
-        i=10
-    elif a<=4096*2-1:
-        i=12
-    elif a<=16384*2-1:
-        i=16
-    for _ in range(i-1,-1,-1):
+    i=50
+    while a<((2**i)*2):
+        i-=1
+    for _ in range(i+1,-1,-1):
         if a>=2**_:
             a-=2**_
             ans+='1'
